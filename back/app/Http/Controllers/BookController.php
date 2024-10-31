@@ -14,12 +14,11 @@ class BookController extends Controller
         return response()->json(['data' => $books], 200);
     }
 
-    //Read Show the data of the chosen
-    public function show($id) {
-    $book = Book::findOrFail($id);
-    return view('books.show', ['book' => $book]);
+    public function show($id)
+    {
+        $book = Book::findOrFail($id);
+        return response()->json(['data' => $book], 200); 
     }
-
     //Create
     public function store(Request $request){
         try {
